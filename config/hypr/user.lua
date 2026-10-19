@@ -1,0 +1,24 @@
+-- Personal Hyprland overrides.
+--
+-- The installer preserves this file across upgrades. Keep machine-specific
+-- monitors, bindings, environment variables, and theme tweaks here. This file
+-- is loaded after Tsugumori's defaults, so later hl.config() calls take effect.
+-- Use hl.unbind() before replacing an existing keybind.
+--
+-- Examples:
+-- hl.monitor({ output = "DP-1", mode = "2560x1440@144", position = "0x0", scale = 1 })
+-- hl.config({ input = { kb_layout = "us" } })
+-- hl.unbind("SUPER + T")
+-- hl.bind("SUPER + T", hl.dsp.exec_cmd("foot"))
+--
+-- Skip the lock screen at login when a display manager already asked for
+-- the password:
+-- tsugumori.lock_at_login = false
+
+-- Fix mouse flickering for NVIDIA/nouveau
+hl.env("WLR_NO_HARDWARE_CURSORS", "1")
+hl.config({
+    cursor = {
+        no_hardware_cursors = true
+    }
+})
